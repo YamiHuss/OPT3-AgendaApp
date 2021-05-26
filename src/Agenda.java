@@ -3,8 +3,10 @@ public class Agenda {
     private String date;
     private String time;
 
-    public Agenda(){
-
+    public Agenda(String name, String date, String time){
+        this.name = name;
+        this.date = date;
+        this.time = time;
     }
 
     public String getName(){
@@ -15,5 +17,9 @@ public class Agenda {
     }
     public String getTime(){
         return time;
+    }
+
+    public boolean rejectEvent(){
+        return ((getName().isEmpty()) || (getDate().isEmpty()) || (getTime().isEmpty()));
     }
 }
