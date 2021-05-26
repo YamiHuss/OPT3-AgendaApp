@@ -49,6 +49,60 @@ public class Agenda {
 
     }
 
+    public Double license(int leeftijd, boolean student, boolean werknemer, boolean korting){
+        Double prijs = 0.00;
+
+        if ((leeftijd >= 12) && (leeftijd <= 18)){
+            prijs += 7.50;
+
+            if (student){
+                if (korting){
+                    prijs -= 2.50;
+                }
+            }
+
+            if (werknemer){
+                if (korting){
+                    prijs -= 1.50;
+                }
+            }
+        }
+
+        if ((leeftijd > 18) && (leeftijd < 30)){
+            prijs += 10.00;
+
+            if (student){
+                if (korting){
+                    prijs -= 2.50;
+                }
+            }
+
+            if (werknemer){
+                if (korting){
+                    prijs -= 1.50;
+                }
+            }
+        }
+
+        if (leeftijd >= 30){
+            prijs += 15.00;
+
+            if (student){
+                if (korting){
+                    prijs -= 2.50;
+                }
+            }
+
+            if (werknemer){
+                if (korting){
+                    prijs -= 1.50;
+                }
+            }
+        }
+
+        return prijs;
+    }
+
     public boolean rejectEvent(){
         return ((getName().isEmpty()) || (getDate().isEmpty()) || (getTime().isEmpty()));
     }

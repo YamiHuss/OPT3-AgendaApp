@@ -27,4 +27,18 @@ class AgendaTest {
 
     }
 
+    @Test
+    public void testLicense(){
+
+        assertEquals(5.00 ,new Agenda("", "", "").license(16, true, false, true));
+        assertEquals(7.50 ,new Agenda("", "", "").license(16, false, false, false));
+
+        assertEquals(8.50 ,new Agenda("", "", "").license(23, false, true, true));
+        assertEquals(7.50 ,new Agenda("", "", "").license(23, true, false, true));
+
+        assertEquals(12.50 ,new Agenda("", "", "").license(35, true, false, true));
+        assertEquals(13.50 ,new Agenda("", "", "").license(35, false, true, true));
+
+    }
+
 }
